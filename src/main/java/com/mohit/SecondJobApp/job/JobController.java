@@ -30,6 +30,7 @@ public class JobController {
 
 	@PostMapping
 	public ResponseEntity<String> createJob(@RequestBody Job job) {
+
 		jobService.createJob(job);
 		return new ResponseEntity<>("Job created Successfully", HttpStatus.CREATED);
 	}
