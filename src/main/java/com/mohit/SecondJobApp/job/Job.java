@@ -1,10 +1,19 @@
 package com.mohit.SecondJobApp.job;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+//@Table(name = "job_table")
 public class Job {
 
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	@Column()
 	private String title;
 
 	private String description;
@@ -14,6 +23,10 @@ public class Job {
 	private String maxSalary;
 
 	private String location;
+
+	public Job() {
+		super();
+	}
 
 	public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
 		super();
